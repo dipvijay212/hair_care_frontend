@@ -1,9 +1,10 @@
 .admin-orders-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 120px 20px 40px;
   min-height: 80vh;
 }
+
 
 .admin-header {
   margin-bottom: 30px;
