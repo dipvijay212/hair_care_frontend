@@ -1,0 +1,131 @@
+.admin-orders-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 80vh;
+}
+
+.admin-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 15px;
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.admin-header p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.no-orders h3 {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.no-orders p {
+  color: #888;
+}
+
+.orders-table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: 1px solid #eaeaea;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.orders-table th,
+.orders-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.orders-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.orders-table td {
+  color: #555;
+  vertical-align: top;
+}
+
+.orders-table tbody tr:hover {
+  background-color: #fcfcfc;
+}
+
+.order-id {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.order-address {
+  white-space: normal;
+  max-width: 300px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  white-space: normal;
+}
+
+.order-item {
+  font-size: 0.9rem;
+  background-color: #f1f3f5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  max-width: 250px;
+}
+
+
+.order-total {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
+  background-color: #ffe6e6;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.orders-summary {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #eaeaea;
+  text-align: right;
+  font-size: 1.1rem;
+}
