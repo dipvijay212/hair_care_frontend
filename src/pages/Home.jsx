@@ -29,13 +29,13 @@ const Home = () => {
   const benefits = [
     {
       icon: <Zap size={40} />,
-      title: "Reduce Hair Fall",
-      desc: "Clinically proven to reduce 87% of breakage and fall-out from the first month.",
+      title: "Strength & Vitality",
+      desc: "Helps improve hair strength and density from the first month.",
     },
     {
       icon: <ArrowRight size={40} />,
-      title: "Boost Hair Growth",
-      desc: "Stimulates dormant follicles to enter the active growth phase faster.",
+      title: "Supports Hair Wellness",
+      desc: "Nourishes the scalp to support a healthier, fuller appearance.",
     },
     {
       icon: <Anchor size={40} />,
@@ -52,12 +52,12 @@ const Home = () => {
   const testimonials = [
     {
       name: "Rahul S.",
-      text: "I was skeptical at first, but after using the Gethair-F solution for 45 days, my hair density improved noticeably!",
+      text: "I was skeptical at first, but after using the Gethair-F solution for 45 days, my hair health improved noticeably!",
       stars: 5,
     },
     {
       name: "Amit D.",
-      text: "Best clinically proven solution I’ve tried. The KTGOLD shampoo works perfectly for my scalp and has stopped my hair fall.",
+      text: "Best wellness solution I’ve tried. The KTGOLD shampoo works perfectly for my scalp and has helped my hair's appearance.",
       stars: 5,
     },
     {
@@ -80,7 +80,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Stop Hair Fall
+            Fuller, Healthy Hair
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -107,7 +107,7 @@ const Home = () => {
       <section className="benefits section-padding">
         <div className="container">
           <div className="section-title text-center">
-            <h2>Why HairCare ?</h2>
+            <h2>Why Hair Wellness?</h2>
             <p>
               Our holistic approach to hair wellness ensures long-lasting
               results.
@@ -151,28 +151,28 @@ const Home = () => {
                 src="/assets/man-results-top.png"
                 alt="Indian Man Hair Growth Result"
               />
-              <div className="trans-badge">45 Day Transformation</div>
+              <div className="trans-badge">45 Day Wellness Journey</div>
             </div>
             <div className="transformation-content">
-              <span className="subtitle">Clinical Success</span>
+              <span className="subtitle">Wellness Success</span>
               <h2>
-                Visible Regrowth <br />
-                in 45 days
+                Noticeable<br />
+                Improvement
               </h2>
               <p>
-                Our clinical-grade formula is specifically designed for Indian
-                hair patterns. Experience the confidence of a fuller, thicker
-                mane with our dermatologically tested regimen.
+                Our scientifically inspired formula is specifically designed for 
+                hair wellness. Experience the confidence of a fuller, thicker
+                looking mane with our gentle care regimen.
               </p>
               <ul className="check-list">
                 <li>
-                  <span>✓</span> Increased hair density
+                  <span>✓</span> Strengthens and nourishes roots
                 </li>
                 <li>
-                  <span>✓</span> Stimulates dormant follicles
+                  <span>✓</span> Supports scalp health
                 </li>
                 <li>
-                  <span>✓</span> Strengthening from the root
+                  <span>✓</span> Promotes overall hair vitality
                 </li>
               </ul>
             </div>
@@ -190,25 +190,25 @@ const Home = () => {
                 Growth Regimen
               </h2>
               <p>
-                Our Advanced Growth Kit combines 4 powerful clinical treatments
+                Our Advanced Growth Kit combines 4 powerful wellness solutions
                 into one simple daily routine.
               </p>
               <div className="kit-items-grid">
                 <div className="kit-item">
-                  <strong>Gethair-F 10%</strong>
-                  <p>Minoxidil & Finasteride Solution</p>
+                  <strong>Gethair-F Solution</strong>
+                  <p>Advanced Amino & Herbal Formula</p>
                 </div>
                 <div className="kit-item">
-                  <strong>KTGOLD</strong>
-                  <p>Ketoconazole & Zpto Shampoo</p>
+                  <strong>KTGOLD Shampoo</strong>
+                  <p>pH Balanced Scalp Care</p>
                 </div>
                 <div className="kit-item">
                   <strong>Herbitrace-30</strong>
-                  <p>Herbal Vitamins & Minerals</p>
+                  <p>Vital Hair Nutrients & Minerals</p>
                 </div>
                 <div className="kit-item">
                   <strong>CLODES-B</strong>
-                  <p>Clinical Scalp Lotion</p>
+                  <p>Premium Scalp Lotion</p>
                 </div>
                 <div className="kit-item full-width">
                   <strong>Advanced Derma Roller</strong>
