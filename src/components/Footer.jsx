@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="footer-grid">
           {/* Brand Info */}
           <div className="footer-section brand-info">
-            <h3 className="brand-logo">HairCare</h3>
+            <h3 className="brand-logo">Hair Wellness</h3>
             <p>
               High-performance hair care that harnesses the power of botanical
               science to restore your crown.
