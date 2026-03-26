@@ -59,7 +59,7 @@ const ProductDetails = () => {
       name: "Sarah L.",
       rating: 5,
       date: "Oct 12, 2025",
-      text: "I saw results in just 3 weeks! My edges are finally growing back.",
+      text: "I noticed a difference in just 3 weeks! My hair feels much stronger.",
     },
     {
       name: "Michael T.",
@@ -148,7 +148,7 @@ const ProductDetails = () => {
               <Truck size={16} /> Free Shipping on orders over ₹50
             </p>
             <p>
-              <RotateCcw size={16} /> 90-Day Money Back Guarantee
+              <RotateCcw size={16} /> Satisfaction Commitment
             </p>
           </div>
         </div>
