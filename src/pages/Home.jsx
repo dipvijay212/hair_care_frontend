@@ -4,6 +4,7 @@ import { ArrowRight, Star, ShieldCheck, Leaf, Zap, Anchor } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import axios from "axios";
+import * as gtag from "../utils/gtag";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -96,7 +97,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link to="/shop" className="btn btn-primary">
+            <Link to="/shop" className="btn btn-primary" onClick={() => gtag.event({ action: 'conversion', category: 'CTA', label: 'Hero Shop Now' })}>
               Shop Now
             </Link>
           </motion.div>
@@ -215,7 +216,7 @@ const Home = () => {
                   <p>Scalp Stimulation Tool</p>
                 </div>
               </div>
-              <Link to="/product/6" className="btn btn-primary">
+              <Link to="/product/6" className="btn btn-primary" onClick={() => gtag.event({ action: 'conversion', category: 'CTA', label: 'Home Kit Spotlight' })}>
                 Get the Complete Kit
               </Link>
             </div>
@@ -263,7 +264,7 @@ const Home = () => {
               Join the Bloom movement today and get 21% off your first order
               with code: <strong>HairCare21%</strong>
             </p>
-            <Link to="/shop" className="btn btn-primary">
+            <Link to="/shop" className="btn btn-primary" onClick={() => gtag.event({ action: 'conversion', category: 'CTA', label: 'Home Bottom Offer' })}>
               Claim My Offer
             </Link>
           </div>
