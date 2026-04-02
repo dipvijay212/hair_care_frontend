@@ -1,7 +1,23 @@
 import React from "react";
 import { Trash2, Plus, Minus } from "lucide-react";
+import * as gtag from "../utils/gtag";
 
 const CartItem = ({ item, updateQuantity, removeFromCart }) => {
+  const handleRemove = () => {
+    removeFromCart(item.id);
+    gtag.ecommerceEvent("remove_from_cart", {
+      currency: "INR",
+      value: item.price * item.quantity,
+      items: [
+        {
+          item_id: item.id,
+          item_name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        },
+      ],
+    });
+  };
   return (
     <div className="cart-item">
       <div className="item-image">
@@ -11,7 +27,7 @@ const CartItem = ({ item, updateQuantity, removeFromCart }) => {
         <div className="item-header">
           <h3>{item.name}</h3>
           <button
-            onClick={() => removeFromCart(item.id)}
+            onClick={handleRemove}
             className="remove-btn"
           >
             <Trash2 size={18} />
