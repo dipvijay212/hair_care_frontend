@@ -3,10 +3,23 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react";
 import CartItem from "../components/CartItem";
+import * as gtag from "../utils/gtag";
 import "../styles/Cart.css";
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const handleBeginCheckout = () => {
+    gtag.ecommerceEvent("begin_checkout", {
+      currency: "INR",
+      value: cartTotal,
+      items: cart.map((item) => ({
+        item_id: item.id,
+        item_name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+    });
+  };
 
   if (cart.length === 0) {
     return (
@@ -50,7 +63,11 @@ const Cart = () => {
             <span>Total</span>
             <span>₹{cartTotal.toFixed(2)}</span>
           </div>
-          <Link to="/checkout" className="btn btn-primary checkout-btn">
+          <Link
+            to="/checkout"
+            className="btn btn-primary checkout-btn"
+            onClick={handleBeginCheckout}
+          >
             Proceed to Checkout
           </Link>
           <Link to="/shop" className="btn-continue">
