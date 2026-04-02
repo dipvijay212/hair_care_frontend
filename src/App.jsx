@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import PageTracking from "./components/PageTracking";
+import WhatsappButton from "./components/WhatsappButton";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
@@ -16,6 +18,8 @@ import "./styles/index.css";
 function App() {
   return (
     <Router>
+      <PageTracking />
+      <WhatsappButton />
       <div className="app-wrapper">
         <Navbar />
         <main>
