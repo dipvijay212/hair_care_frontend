@@ -2,10 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingBag, Star, Eye } from "lucide-react";
 import { useCart } from "../context/CartContext";
+import * as gtag from "../utils/gtag";
 import "../styles/ProductCard.css";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    gtag.ecommerceEvent("add_to_cart", {
+      currency: "INR",
+      value: product.price,
+      items: [
+        {
+          item_id: product.id,
+          item_name: product.name,
+          price: product.price,
+          quantity: 1,
+        },
+      ],
+    });
+  };
 
   return (
     <div className="product-card">
@@ -22,7 +39,7 @@ const ProductCard = ({ product }) => {
           <button
             className="overlay-icon-btn"
             title="Add to Cart"
-            onClick={() => addToCart(product)}
+            onClick={handleAddToCart}
           >
             <ShoppingBag size={20} />
           </button>
@@ -60,7 +77,7 @@ const ProductCard = ({ product }) => {
             <Link to={`/product/${product.id}`} className="btn-text">
               Details
             </Link>
-            <button className="btn-small" onClick={() => addToCart(product)}>
+            <button className="btn-small" onClick={handleAddToCart}>
               Add
             </button>
           </div>
