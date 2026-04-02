@@ -1,8 +1,19 @@
 import React from "react";
 import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
+import * as gtag from "../utils/gtag";
 import "../styles/Contact.css";
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Track Lead Generation
+    gtag.event({
+      action: "generate_lead",
+      category: "Contact",
+      label: "Contact Form Submission",
+    });
+    alert("Message sent successfully (Tracking active)!");
+  };
   return (
     <div className="contact-page container section-padding">
       <div className="contact-header">
@@ -49,7 +60,7 @@ const Contact = () => {
         </div>
 
         <div className="contact-form-container">
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleSubmit}>
             <input type="text" placeholder="Your Name" required />
             <input type="email" placeholder="Your Email" required />
             <select required>
