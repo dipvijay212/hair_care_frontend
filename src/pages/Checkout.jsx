@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 import { ShoppingBag, CreditCard, ChevronLeft } from "lucide-react";
+import * as gtag from "../utils/gtag";
 import "../styles/Checkout.css";
 
 const Checkout = () => {
@@ -33,7 +34,23 @@ const Checkout = () => {
     };
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/orders`, orderData);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/orders`,
+        orderData,
+      );
+
+      // Track Purchase
+      gtag.ecommerceEvent("purchase", {
+        transaction_id: response.data?.order?._id || `ORD-${Date.now()}`,
+        value: cartTotal,
+        currency: "INR",
+        items: cart.map((item) => ({
+          item_id: item.id,
+          item_name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        })),
+      });
 
       clearCart();
       navigate("/order-success");
