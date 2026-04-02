@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
+import * as gtag from "../utils/gtag";
 import {
   Star,
   Shield,
@@ -29,6 +30,18 @@ const ProductDetails = () => {
           `${import.meta.env.VITE_API_URL}/api/products/${id}`,
         );
         setProduct(data);
+        gtag.ecommerceEvent("view_item", {
+          currency: "INR",
+          value: data.price,
+          items: [
+            {
+              item_id: data.id,
+              item_name: data.name,
+              price: data.price,
+              quantity: 1,
+            },
+          ],
+        });
       } catch (error) {
         console.error("Error fetching product", error);
       }
@@ -47,6 +60,18 @@ const ProductDetails = () => {
     for (let i = 0; i < quantity; i++) {
       addToCart(product);
     }
+    gtag.ecommerceEvent("add_to_cart", {
+      currency: "INR",
+      value: product.price * quantity,
+      items: [
+        {
+          item_id: product.id,
+          item_name: product.name,
+          price: product.price,
+          quantity: quantity,
+        },
+      ],
+    });
   };
 
   const handleBuyNow = () => {
